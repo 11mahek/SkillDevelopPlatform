@@ -1,1 +1,1 @@
-# SkillDevelopPlatform-
+# SkillDevelopPlatform
