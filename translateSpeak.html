@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Computer Concepts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1 data-translate id="title">Basic Computer Concepts</h1>
+        <button id="translateButton" onclick="translatePage(currentLanguage === 'en' ? 'hi' : 'en')">Translate to Hindi</button>
+        <button id="speakButton" onclick="speakContent()">Speak</button>
+    </header>
+    
+    <main id="content">
+        <section>
+            <h2 data-translate id="whatIs">What is a Computer?</h2>
+            <p data-translate id="whatIsText">A computer is an electronic device that can process data, perform calculations, and execute instructions.</p>
+        </section>
+        <section>
+            <h2 data-translate id="components">Components of a Computer</h2>
+            <p data-translate id="componentsText">The basic components include the CPU, monitor, keyboard, and mouse.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p data-translate id="footerText">Created by Mahek</p>
+    </footer>
+
+
+    <script>
+        let currentLanguage = localStorage.getItem("language") || "en";
+
+// Function to Translate Text
+async function translateText(text, targetLang) {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+
+    try {
+        const response = await fetch(url);
+        const result = await response.json();
+        return result[0].map(item => item[0]).join(" ");
+    } catch (error) {
+        console.error("Translation error:", error);
+        return text; // Return original text if translation fails
+    }
+}
+
+// Function to Translate the Whole Page
+async function translatePage(targetLang) {
+    currentLanguage = targetLang;
+    localStorage.setItem("language", currentLanguage);
+
+    // Get all translatable elements
+    const elements = document.querySelectorAll("[data-translate]");
+
+    for (const element of elements) {
+        const originalText = element.getAttribute("data-original") || element.innerText;
+        if (!element.getAttribute("data-original")) {
+            element.setAttribute("data-original", originalText); // Store original text
+        }
+
+        const translatedText = await translateText(originalText, targetLang);
+        element.innerText = translatedText;
+    }
+
+    // Update button text
+    document.getElementById("translateButton").innerText = targetLang === "hi" ? "अंग्रेजी में अनुवाद करें" : "Translate to Hindi";
+    document.getElementById("speakButton").innerText = targetLang === "hi" ? "बोलें" : "Speak";
+}
+
+// Function to Speak Content
+function speakContent() {
+    const content = document.getElementById("content").innerText;
+    const speech = new SpeechSynthesisUtterance(content);
+
+    // Set language based on translation
+    if (currentLanguage === "hi") {
+        speech.lang = "hi-IN"; // Hindi
+    } else {
+        speech.lang = "en-US"; // English
+    }
+
+    speech.rate = 1;
+    window.speechSynthesis.cancel(); // Stop any previous speech before speaking again
+    window.speechSynthesis.speak(speech);
+}
+
+// Load Language on Page Load
+document.addEventListener("DOMContentLoaded", () => {
+    translatePage(currentLanguage);
+});
+
+    </script>
+</body>
+</html>

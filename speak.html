@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Computer Concepts</title>
+    <style>
+        /* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Styling the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: #218838;
+}
+
+/* Styling the main content */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Basic Computer Concepts</h1>
+        <button onclick="speakContent()">Speak</button>
+    </header>
+    <main>
+        <section>
+            <h2>What is a Computer?</h2>
+            <p>A computer is an electronic device that can process data, perform calculations, and execute instructions.</p>
+        </section>
+        <section>
+            <h2>Components of a Computer</h2>
+            <p>The basic components include the CPU, monitor, keyboard, and mouse. Each part plays a vital role in performing tasks.</p>
+        </section>
+        <section>
+            <h2>Types of Computers</h2>
+            <p>There are various types of computers, such as personal computers (PCs), laptops, tablets, and supercomputers. Each type is suited for specific tasks.</p>
+        </section>
+        <section>
+            <h2>How Does a Computer Work?</h2>
+            <p>A computer works by receiving input, processing it through the CPU, storing data in memory, and displaying the output on the monitor or other devices.</p>
+        </section>
+        <section>
+            <h2>Software vs Hardware</h2>
+            <p>Hardware refers to the physical components of a computer, while software refers to the programs and operating systems that run on the computer.</p>
+        </section>
+        <section>
+            <h2>Operating Systems</h2>
+            <p>An operating system (OS) is the software that manages hardware and software resources on a computer. Common OS examples include Windows, macOS, and Linux.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Created by Mahek</p>
+    </footer>
+    <script>
+        function speakContent() {
+            // Extracting the text content of the main section
+            const content = document.querySelector('main').innerText;
+        
+            // Creating a new speech synthesis utterance with the extracted content
+            const speech = new SpeechSynthesisUtterance(content);
+        
+            // Set properties for the speech
+            speech.lang = 'en-US';  // You can change language settings if needed
+            speech.rate = 1;        // Normal speed (adjust if necessary)
+            speech.pitch = 1;       // Normal pitch (adjust if necessary)
+        
+            // Speaking the content
+            window.speechSynthesis.speak(speech);
+        }
+        
+    </script>
+</body>
+</html>

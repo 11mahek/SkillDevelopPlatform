@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Literacy - Unlock Your Digital World</title>
+    <style>
+        /* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #02469e;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-bottom: 4px solid #004c99;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+h2, h3 {
+    color: #075099;
+    margin: 15px 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.intro p, .attitude-container p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.module-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.flow-pattern {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.module-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    width: 70%;
+    transition: transform 0.3s ease-in-out;
+    font-size: 20px;
+}
+
+.module-box:hover {
+    transform: scale(1.05);
+}
+
+.module-number {
+    font-size: 36px;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.module-box a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-top: 15px;
+}
+
+.module-box a:hover {
+    text-decoration: underline;
+    color: #004c99;
+}
+
+/* Arrows for indicating sequence */
+.arrow {
+    font-size: 50px;
+    color: #0073e6;
+    margin-top: 20px;
+    display: block;
+}
+
+/* Styling for attitude section */
+.attitude-container {
+    background-color: #eef6ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px auto;
+    margin-bottom: 110px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgb(122, 122, 122);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1 data-translate>🌐 Welcome to Digital Literacy Program! 📚</h1>
+        <p data-translate>Your Gateway to the Digital World. Learn, Explore, and Grow with Us! 🚀</p>
+        <button id="translateButton" onclick="translatePage(currentLanguage === 'en' ? 'hi' : 'en')">Translate to Hindi</button>
+        <button id="speakButton" onclick="speakContent()">Speak</button>
+    </header>
+
+    <div class="intro" id="content">
+        <h2 data-translate>✨ Why Digital Literacy? ✨</h2>
+        <p data-translate>We live in a world where everything is connected digitally. Whether you're a student or a professional, knowing how to use digital tools is a must. It's not just about using computers—it's about unlocking your potential! 🔑</p>
+    </div>
+
+    <div class="module-container">
+        <h2 data-translate>📚 Modules You Will Explore:</h2>
+
+        <div class="flow-pattern">
+            <div class="module-box">
+                <span class="module-number">1️⃣</span>
+                <a href="module1.html" data-translate>Module 1: Introduction to Computers & Devices 💻</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">2️⃣</span>
+                <a href="module2.html" data-translate>Module 2: Hardware & Connectivity 🔌</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">3️⃣</span>
+                <a href="module3.html" data-translate>Module 3: Operating a Computer & Mobile 📱</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">4️⃣</span>
+                <a href="module4.html" data-translate>Module 4: Essential Software & Tools 🛠️</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">5️⃣</span>
+                <a href="module5.html" data-translate>Module 5: Internet & Online Navigation 🌍</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">6️⃣</span>
+                <a href="module6.html" data-translate>Module 6: Digital Communication & Online Collaboration 📧</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">7️⃣</span>
+                <a href="module7.html" data-translate>Module 7: Online Safety & Cybersecurity 🔒</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">8️⃣</span>
+                <a href="module8.html" data-translate>Module 8: Digital Skills for Career & Learning 🎓</a>
+                <div class="arrow">&#8595;</div>
+            </div>
+
+            <div class="module-box">
+                <span class="module-number">9️⃣</span>
+                <a href="quiz.html" data-translate>Quiz and Certification </a>
+                <div>🏆🏆🏆🏆🏆🏆</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="attitude-container">
+        <h3 data-translate>🚀 Our Attitude:</h3>
+        <p data-translate>"Don't wait for the future to happen. Learn, adapt, and embrace the digital world today. The future belongs to those who are prepared!"</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Digital Literacy Program | All Rights Reserved</p>
+        <a href="#top" data-translate>🔝 Back to Top</a>
+    </footer>
+    
+    <script>
+        let currentLanguage = localStorage.getItem("language") || "en";
+
+// Function to Translate Text
+async function translateText(text, targetLang) {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+
+    try {
+        const response = await fetch(url);
+        const result = await response.json();
+        return result[0].map(item => item[0]).join(" ");
+    } catch (error) {
+        console.error("Translation error:", error);
+        return text; // Return original text if translation fails
+    }
+}
+
+// Function to Translate the Whole Page
+async function translatePage(targetLang) {
+    currentLanguage = targetLang;
+    localStorage.setItem("language", currentLanguage);
+
+    // Get all translatable elements
+    const elements = document.querySelectorAll("[data-translate]");
+
+    for (const element of elements) {
+        const originalText = element.getAttribute("data-original") || element.innerText;
+        if (!element.getAttribute("data-original")) {
+            element.setAttribute("data-original", originalText); // Store original text
+        }
+
+        const translatedText = await translateText(originalText, targetLang);
+        element.innerText = translatedText;
+    }
+
+    // Update button text
+    document.getElementById("translateButton").innerText = targetLang === "hi" ? "अंग्रेजी में अनुवाद करें" : "Translate to Hindi";
+    document.getElementById("speakButton").innerText = targetLang === "hi" ? "बोलें" : "Speak";
+}
+
+// Function to Speak Content
+function speakContent() {
+    const content = document.getElementById("content").innerText;
+    const speech = new SpeechSynthesisUtterance(content);
+
+    // Set language based on translation
+    if (currentLanguage === "hi") {
+        speech.lang = "hi-IN"; // Hindi
+    } else {
+        speech.lang = "en-US"; // English
+    }
+
+    speech.rate = 1;
+    window.speechSynthesis.cancel(); // Stop any previous speech before speaking again
+    window.speechSynthesis.speak(speech);
+}
+
+// Load Language on Page Load
+document.addEventListener("DOMContentLoaded", () => {
+    translatePage(currentLanguage);
+});
+
+    </script>
+</body>
+</html>

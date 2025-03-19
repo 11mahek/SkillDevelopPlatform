@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Communities Skill Learning Platform - Module 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #000000;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #fff;
+        }
+
+        header p {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .accordion {
+            background-color: #5836f1;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .accordion:hover {
+            background-color: #132664;
+        }
+
+        .panel {
+            padding: 15px;
+            background-color: #9bdaff;
+            display: none;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Module 1: Introduction to Computers & Devices</h1>
+    </header>
+    <button class="accordion">1. What is a Computer? (Desktop vs Laptop)</button>
+    <div class="panel">
+        <p>A computer is a machine that can perform various tasks like processing data, running programs, and connecting to the internet.</p>
+        <p><strong>Desktop:</strong> A desktop computer is a stationary unit designed for personal use.</p>
+        <p><strong>Laptop:</strong> A laptop is a portable computer that combines all the components of a desktop in one compact form.</p>
+        <p>A computer is a machine that can perform various tasks like processing data, running programs, and connecting to the internet.</p>
+        <p><strong>Desktop:</strong> A desktop computer is a stationary unit designed for personal use.</p>
+        <p><strong>Laptop:</strong> A laptop is a portable computer that combines all the components of a desktop in one compact form.</p>
+        <img src="1.jpg" alt="Desktop VS Laptop">
+    </div>
+
+    <button class="accordion">1. What is a Computer? (Desktop vs Laptop)</button>
+    <div class="panel">
+        <p>A computer is a machine that can perform various tasks like processing data, running programs, and connecting to the internet.</p>
+        <p><strong>Desktop:</strong> A desktop computer is a stationary unit designed for personal use.</p>
+        <p><strong>Laptop:</strong> A laptop is a portable computer that combines all the components of a desktop in one compact form.</p>
+        <img src="1.jpg" alt="Desktop VS Laptop">
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
